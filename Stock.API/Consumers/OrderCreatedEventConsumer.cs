@@ -51,7 +51,7 @@ namespace Stock.API.Consumers
                 _logger.LogInformation($"Stock was reserved for BuyerId :{context.Message.BuyerId}");
 
                 var sendEndpoint = await _sendEndpoint.GetSendEndpoint(new Uri(
-                    $"queue:{RabbitMQSettingsConst.StockReservedEventQueueNAme}"));
+                    $"queue:{RabbitMQSettingsConst.StockReservedEventQueueName}"));
 
                 StockReservedEvent stockReservedEvent = new()
                 {
